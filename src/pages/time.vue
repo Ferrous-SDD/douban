@@ -1,5 +1,10 @@
 <template>
-    <div>豆瓣时间</div>
+    <div>
+        <header>
+            <top-nav></top-nav>
+            <div>豆瓣时间</div>
+        </header>    
+    </div>
 </template>
 
 <script>

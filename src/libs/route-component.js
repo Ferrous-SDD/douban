@@ -1,5 +1,7 @@
+/**
+ * 全局方法配置文件
+ */
 import store from '@/store/store';
-
 
 export default {
     mixins: [

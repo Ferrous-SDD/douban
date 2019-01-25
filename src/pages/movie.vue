@@ -1,5 +1,10 @@
 <template>
-    <div>电影</div>
+    <div>
+        <header>
+            <top-nav></top-nav>
+            <div>电影</div>
+        </header>
+    </div>
 </template>
 
 <script>

@@ -1,5 +1,10 @@
 <template>
-    <div>小组</div>
+    <div>
+        <header>
+            <top-nav></top-nav>
+            <div>小组</div>
+        </header> 
+    </div>
 </template>
 
 <script>

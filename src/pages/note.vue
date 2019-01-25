@@ -1,5 +1,10 @@
 <template>
-    <div>note</div>
+    <div>
+        <header>
+            <top-nav></top-nav>
+            <div>note</div>
+        </header>    
+    </div>
 </template>
 
 <script>

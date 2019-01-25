@@ -1,5 +1,10 @@
 <template>
-    <div>图书</div>
+    <div>
+        <header>
+            <top-nav></top-nav>
+            <div>图书</div>
+        </header>    
+    </div>
 </template>
 
 <script>
