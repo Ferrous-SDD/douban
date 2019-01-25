@@ -3,7 +3,10 @@ let store = {
     namespaced: true,
     state: {
         axios: axios
-    },
+	},
+	getters: {
+
+	},
     actions: {
 		queryHomeRecommend({
 			commit,
@@ -12,7 +15,7 @@ let store = {
 		},data) {
 			let key = "home.queryHomeRecommend";
 			// return new Promise((resolve) => {
-			// 	return axios.post('http://api-fat.vphotos.cn/vphotossaas/admin/certification/getPhotographerAuthenticationDetails',data)
+			// 	return axios.post('',data)
 			// 	.then((json) => {
 			// 		resolve(json);
 			// 	})

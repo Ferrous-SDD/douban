@@ -5,11 +5,12 @@ import status from './pages/status';
 
 Vue.use(Vuex);
 let actions = {
-    destroy({
+    /*destroy({
         dispatch
     }) {
         dispatch('home/destory');
-    }
+        dispatch('status/destory');
+    }*/
 };
 export default new Vuex.Store({
     actions,
