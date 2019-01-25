@@ -1,0 +1,22 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  height: 0;
+  display: block;
+  visibility: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.layout-main {
+  width: 100%;
+  overflow: hidden;
+  list-style: none;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    padding-inline-start: 0px;
+  }
+}
