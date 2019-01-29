@@ -1,8 +1,8 @@
-
+import axios from 'axios';
 let store = {
     namespace: true,
     state: {
-
+        axios: axios
     },
     actions: {
 

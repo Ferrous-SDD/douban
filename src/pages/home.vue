@@ -34,7 +34,11 @@
                         <div class="author">{{item.target.author.name}}</div>
                     </router-link>
                 </li>
+                <infinite-loading ref="infiniteLoading" :on-infinite="onInfinite">
+                    <loading slot="spiner"></loading>
+                </infinite-loading>
             </ul>
+            <loading></loading>
         </section>
     </div>
 </template>
@@ -64,6 +68,9 @@ export default {
                 return;
             }
             return json.data;
+        },
+        onInfinite() {
+
         }
     }   
 }
