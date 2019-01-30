@@ -4,7 +4,6 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import 'axios';
-import 'vue-infinite-loading';
 import store from '@/store/store';
 import Header from '@/components/header';
 import Loading from '@/components/loading';

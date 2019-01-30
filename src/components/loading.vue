@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="'@/img/loading_' + loadingColor + '.gif'" alt="loading">
+        <img :src="'../img/loading_grey.gif'" alt="loading">
     </div>
 </template>
 
@@ -15,7 +15,8 @@ export default {
     },
     data() {
         return {
-
+            imgUrlGreen: "../img/loading_green.gif",
+            imgUrlGrey: "../img/loading_grey.gif",
         }
     },
 

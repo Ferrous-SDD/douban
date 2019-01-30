@@ -34,8 +34,8 @@
                         <div class="author">{{item.target.author.name}}</div>
                     </router-link>
                 </li>
-                <infinite-loading ref="infiniteLoading" :on-infinite="onInfinite">
-                    <loading slot="spiner"></loading>
+                <infinite-loading ref="infiniteLoading" @infinite="onInfinite">
+                    <loading slot="spinner"></loading>
                 </infinite-loading>
             </ul>
             <loading></loading>
@@ -44,32 +44,50 @@
 </template>
 
 <script>
+import InfiniteLoading from 'vue-infinite-loading';
 import RouteComponent from '@/libs/route-component';
 export default {
     mixins: [
         RouteComponent
     ],
+    components: {
+        InfiniteLoading
+    },
     data() {
         return {
             recommendData: null,
+            date: "",
         }
     },
     methods: {
         async didMounted() {
-            this.recommendData = await this.getRecommended();
-            console.log(this.recommendData)
+            this.date = new Date();
+            let params = {
+                date: this.transformDate()
+            };
+            this.recommendData = await this.getRecommended(params);
+            console.log(this.recommendData);
         },
-        async getRecommended() {
-            let json = await this.$store.dispatch('home/queryHomeRecommend',{
-                // 请求参数
-            })
+        async getRecommended(params) {
+            let json = await this.$store.dispatch('home/queryHomeRecommend',params);
             if(json.code != 0) {
                 // this.msg(json.message);
                 return;
             }
             return json.data;
         },
-        onInfinite() {
+        transformDate() {
+            let month = this.date.getMonth() + 1,
+                year = this.date.getFullYear(),
+                day = this.date.getDate();
+            return year + "-" + month + "-" + day;
+        },
+        async onInfinite() {
+            console.log(this.date)
+            this.date = new Date(this.date.getTime() - 24*60*60*1000);
+            console.log(this.date)
+            // this.recommendData = await this.getRecommended(params);
+            this.$refs.infiniteLoading.$emit('$infiniteLoading:loaded');
 
         }
     }   
